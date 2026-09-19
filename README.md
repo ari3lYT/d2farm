@@ -1,5 +1,7 @@
 # D2Farm
 
+**English** · [Русский](README.ru.md)
+
 D2Farm is a server-side Fabric farming extension built entirely from vanilla blocks and items. Players do not need a client mod or resource pack.
 
 ## Features
