@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "d2farm-test",
+  "version": "1.0.0",
+  "name": "D2Farm headless checks",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["ru.d2omg.d2farm.QaServer"],
+    "fabric-client-gametest": ["ru.d2omg.d2farm.FarmClientTest", "ru.d2omg.d2farm.ExternalFarmClientTest"]
+  }
+}

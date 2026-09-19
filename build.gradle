@@ -1,0 +1,60 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version '1.14.10'
+}
+
+group = 'ru.d2omg'
+version = project.mod_version
+base { archivesName = 'd2farm' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.11'
+    mappings 'net.fabricmc:yarn:1.21.11+build.5:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.18.4'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.141.3+1.21.11'
+    testImplementation platform('org.junit:junit-bom:5.13.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    if (project.hasProperty('ledgerQa')) {
+        modLocalRuntime files('integration/ledger-1.3.19.jar', 'integration/fabric-language-kotlin.jar')
+        modLocalRuntime fileTree(dir: 'integration', include: '*-deps/META-INF/jars/*.jar')
+    }
+}
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+test { useJUnitPlatform() }
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+fabricApi.configureTests {
+    createSourceSet = true
+    modId = 'd2farm-test'
+    enableClientGameTests = true
+    enableGameTests = false
+    username = 'LoerVoid'
+}
+loom {
+    runs {
+        clientGameTest { vmArg '-Dfabric.client.gametest.disableNetworkSynchronizer=true' }
+        qaServer {
+            server()
+            source sourceSets.gametest
+            runDir 'build/run/qaServer'
+            vmArg '-Dd2farm.qa=true'
+            vmArg '-Xmx2G'
+        }
+        if (project.hasProperty('ledgerQa')) {
+            clientGameTest {
+                vmArg '-Dd2farm.external=true'
+            }
+        }
+    }
+}
+tasks.register('prepareQaServer', Copy) {
+    from 'src/gametest/resources/qa-server'
+    into 'build/run/qaServer'
+}
+tasks.named('runQaServer') { dependsOn 'prepareQaServer' }

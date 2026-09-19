@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:diamond_hoe",
+    "minecraft:iron_ingot",
+    "minecraft:hay_block"
+  ],
+  "result": {
+    "id": "minecraft:diamond_hoe",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "d2farm": "REAPER"
+      },
+      "minecraft:item_name": {
+        "text": "Жатвенная мотыга",
+        "color": "green"
+      },
+      "minecraft:lore": [
+        {
+          "text": "ПКМ: собрать и пересадить зрелые растения 3×3.",
+          "color": "gray"
+        },
+        {
+          "text": "Shift + ПКМ: один блок.",
+          "color": "dark_gray"
+        }
+      ]
+    }
+  }
+}

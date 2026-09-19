@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_hoe",
+    "minecraft:wheat_seeds",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "id": "minecraft:iron_hoe",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "d2farm": "SOWER"
+      },
+      "minecraft:item_name": {
+        "text": "Посевная мотыга",
+        "color": "green"
+      },
+      "minecraft:lore": [
+        {
+          "text": "ПКМ: вспашка 3×3. Семена — во второй руке.",
+          "color": "gray"
+        },
+        {
+          "text": "Shift + ПКМ: один блок.",
+          "color": "dark_gray"
+        }
+      ]
+    }
+  }
+}

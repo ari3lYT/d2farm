@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat_seeds",
+    "minecraft:rotten_flesh",
+    "minecraft:bone_meal",
+    "minecraft:dirt"
+  ],
+  "result": {
+    "id": "minecraft:brown_dye",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "d2farm": "COMPOST"
+      },
+      "minecraft:item_name": {
+        "text": "Компост",
+        "color": "green"
+      },
+      "minecraft:lore": [
+        {
+          "text": "ПКМ по грядке: дождевой бонус на 5 урожаев.",
+          "color": "gray"
+        },
+        {
+          "text": "Без дождя рост остаётся обычным.",
+          "color": "dark_gray"
+        }
+      ]
+    }
+  }
+}

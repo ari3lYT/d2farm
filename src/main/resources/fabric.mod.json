@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "d2farm",
+  "version": "${version}",
+  "name": "D2Farm",
+  "description": "Server-side farming tools, soil compost charges, and rain-assisted crops using vanilla blocks and items.",
+  "environment": "*",
+  "entrypoints": {"main": ["ru.d2omg.d2farm.D2Farm"]},
+  "mixins": ["d2farm.mixins.json"],
+  "depends": {"fabricloader": ">=0.18.4", "minecraft": "1.21.11", "java": ">=21", "fabric-api": "*"}
+}

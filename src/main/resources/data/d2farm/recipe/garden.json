@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:golden_hoe",
+    "minecraft:feather",
+    "minecraft:moss_block"
+  ],
+  "result": {
+    "id": "minecraft:golden_hoe",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "d2farm": "GARDEN"
+      },
+      "minecraft:item_name": {
+        "text": "Садовая мотыга",
+        "color": "green"
+      },
+      "minecraft:lore": [
+        {
+          "text": "ПКМ: сбор и пересадка. В руке защищает от вытаптывания.",
+          "color": "gray"
+        },
+        {
+          "text": "Shift + ПКМ: состояние почвы.",
+          "color": "dark_gray"
+        }
+      ]
+    }
+  }
+}

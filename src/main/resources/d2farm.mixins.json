@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "ru.d2omg.d2farm.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["CropRainMixin", "FarmlandMixin", "WorldChunkMixin", "FarmRecipeMixin"],
+  "injectors": {"defaultRequire": 1}
+}
